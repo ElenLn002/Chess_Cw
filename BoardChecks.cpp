@@ -41,69 +41,8 @@ BoardChecks::~BoardChecks() {
     }
 }
 
-void BoardChecks::PrintBoard() {
-    std::cout<<std::endl<<std::endl<<std::endl<<std::endl;
-    const int SquareWidth = 4;
-    const int SquareHeight = 3;
-    for (int Row = 0; Row < 8 * SquareHeight; ++Row) {
-        int SquareRow = Row / SquareHeight;
-        // Print side border with numbering
-        if (Row % 3 == 1) {
-            std::cout << "\t\t\t-" << (8 - SquareRow);
-        }
-        else {
-            
-            std::cout << "\t\t\t__";
-        }
-        // Print the chess board
-        for (int Col = 0; Col < 8 * SquareWidth; ++Col) {
-            int SquareCol = Col / SquareWidth;
-            if (((Row % 3) == 1) && ((Col % 4) == 1 || (Col % 4) == 2) && GameBoard[7 - SquareRow][SquareCol] != 0) {
-                if ((Col % 4) == 1) {
-                    std::cout << GameBoard[7 - SquareRow][SquareCol]->GetColor();
-                }
-                else {
-                    std::cout << GameBoard[7 - SquareRow][SquareCol]->GetPiece();
-                }
-            }
-            else {
-                if ((SquareRow + SquareCol) % 2 == 1) {
-                    std::cout << ' ';
-                }
-                else {
-                    std::cout << '*';
-                }
-            }
-        }
-        std::cout << std::endl;
-    }
-    // Print the bottom border with numbers
-
-    char UpperCaseLetter = 65;
-    for (int Row = 0; Row < SquareHeight; ++Row) {
-        if (Row % 3 == 1) {
-            std::cout << "\t\t\t__";
-            for (int Col = 0; Col < 8 * SquareWidth; ++Col) {
-                int SquareCol = Col / SquareWidth;
-                if ((Col % 4) == 1) {
-                    std::cout << (char)(UpperCaseLetter);
-                    UpperCaseLetter++;
-                }
-                else {
-                    std::cout << "-";
-                }
-            }
-            std::cout << std::endl;
-        }
-        else {
-            std::cout<<"\t\t\t";
-            for (int Col = 1; Col < 9 * SquareWidth; ++Col) {
-                std::cout << "_";
-            }
-            std::cout << std::endl;
-        }
-    }
-}
+void BoardChecks::PrintBoard();
+    
 
 
 bool BoardChecks::IsInCheck(char PieceColor) {
