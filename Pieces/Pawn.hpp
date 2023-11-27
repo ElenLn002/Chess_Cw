@@ -15,4 +15,4 @@ private:
     PieceColour colour;
 
 };
-#endif // !PIECE_HPP
+#endif 
