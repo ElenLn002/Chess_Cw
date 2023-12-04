@@ -1,0 +1,13 @@
+#include <QPainter>
+#include <QPen>
+#include <QMouseEvent>
+#include <QLineEdit>
+#include <QPixmap>
+#include <QPushButton>
+#include <QLabel>
+#include <QGridLayout>
+#include <QColor>
+#include <QVBoxLayout>
+#include <QPalette>
+#include <QPaintEvent>
+#include <QMainWindow>
